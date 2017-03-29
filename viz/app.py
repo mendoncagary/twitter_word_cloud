@@ -10,7 +10,7 @@ def event_stream():
     pubsub = r.pubsub()
     pubsub.subscribe('WordCountTopology')
     for message in pubsub.listen():
-        print message
+        print(message)
         yield 'data: %s\n\n' % message['data']
 
 
